@@ -1,6 +1,6 @@
 ---
 apiVersion: tekton.dev/v1beta1
-kind: task
+kind: Task
 metadata:
   name: cleanup
 spec:
@@ -16,7 +16,7 @@ spec:
       workingDir: $(workspace.source.path)
       securityContext:
         runAsNonRoot: false
-        runAsUser: 
+        runAsUser: 0
       script: |
         #!/usr/bin/env sh
             set -eu
